@@ -10,13 +10,24 @@
   <div class="container">
     <h1>Manage Menu</h1>
     <form id="add-menu-form">
-      <input type="text" id="title" placeholder="Title" required>
-      <input type="text" id="description" placeholder="Description" required>
-      <input type="text" id="imageURL" placeholder="Image URL" required>
-      <input type="number" id="price" placeholder="Price" required>
-      <input type="number" id="ratings" placeholder="Ratings" required>
-      <button type="submit">Add Menu Item</button>
-    </form>
+        <label for="title">Title:</label>
+        <input type="text" id="title" placeholder="Title" required>
+      
+        <label for="description">Description:</label>
+        <input type="text" id="description" placeholder="Description" required>
+      
+        <label for="imageURL">Image URL:</label>
+        <input type="text" id="imageURL" placeholder="Image URL" required>
+      
+        <label for="price">Price:</label>
+        <input type="number" id="price" placeholder="Price" required>
+      
+        <label for="ratings">Ratings:</label>
+        <input type="number" id="ratings" placeholder="Ratings" required>
+      
+        <button type="submit" class="btn">Add Menu Item</button>
+      </form>
+      
     <a href="menu.html">Go to Movie List</a>
   </div>
   <script src="./admin.js"></script>

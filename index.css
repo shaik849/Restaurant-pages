@@ -1,3 +1,11 @@
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,67 +13,175 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #f4f4f4;
-  }
-  
-  .container {
+}
+
+/* Container for Page Content */
+.container {
     width: 100%;
-    max-width: 500px;
+    max-width: 600px; /* Restrict container width */
     background: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  h1 {
+}
+
+/* Menu Specific Container */
+.menu-container {
+    width: 100%;
+    max-width: 1200px; /* Adjust width for menu container */
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+}
+
+/* Headings */
+h1 {
     text-align: center;
-  }
-  
-  form {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+h2, h3, h4, h5, h6 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Links */
+a {
     display: flex;
-    flex-direction: column;
-  }
-  
-  input {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button {
-    padding: 10px;
+    justify-content: center;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+
+/* Buttons */
+button {
+    padding: 10px 15px;
     background: #007bff;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  }
-  
-  ul {
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Delete Button (Red) */
+button.delete-btn {
+    padding: 8px 12px;
+    background-color: #dc3545; /* Red color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.delete-btn:hover {
+    background-color: #a71d2a; /* Darker red for hover */
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+/* Lists */
+ul {
     list-style: none;
     padding: 0;
-  }
-  
-  li {
+}
+
+li {
     margin: 10px 0;
     padding: 10px;
     background: #f8f9fa;
     border: 1px solid #ddd;
     border-radius: 4px;
-  }
+}
 
-  a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Images */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Divs for Headers or Sections */
+div {
+    /* text-align: center; */
+    margin-bottom: 20px;
+}
+
+/* Error Message */
+#error-message {
+    color: red;
+    font-size: 14px;
+    text-align: center;
     margin-top: 10px;
-    text-decoration: none;
-    color: #007bff;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.p-20 {
+    padding: 20px;
+}

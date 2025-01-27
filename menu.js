@@ -16,22 +16,30 @@ if (!localStorage.getItem("token")) {
       menuTableBody.innerHTML = "";
       menu.forEach((item) => {
         const row = document.createElement("tr");
-  
+      
         row.innerHTML = `
-          <td>${item.id}</td>
-          <td><img src="${item.imageURL}" alt="${item.title}" loading="lazy" style="width: 50px; height: 50px;" /></td>
-          <td>${item.title}</td>
-          <td>${item.description}</td>
-          <td>$${item.price.toFixed(2)}</td>
-          <td>${item.ratings} stars</td>
+          <td>${item.id || 'N/A'}</td>
           <td>
-            <button onclick="editMenu(${item.id})">Edit</button>
-            <button onclick="deleteMenu(${item.id})">Delete</button>
+            <img 
+              src="${item.imageURL || 'placeholder.jpg'}" 
+              alt="${item.title || 'Image Not Available'}" 
+              style="width: 50px; height: 50px;" 
+              loading="lazy" 
+            />
+          </td>
+          <td>${item.title || 'Untitled'}</td>
+          <td>${item.description || 'No description provided.'}</td>
+          <td>$${item.price ? item.price.toFixed(2) : '0.00'}</td>
+          <td>${item.ratings ? `${item.ratings} stars` : 'No ratings'}</td>
+          <td>
+            <button onclick="editMenu(${item.id})"  class='btn'>Edit</button>
+            <button onclick="deleteMenu(${item.id})" class='delete-btn'>Delete</button>
           </td>
         `;
-  
+      
         menuTableBody.appendChild(row);
       });
+      
     } catch (err) {
       console.error("Error fetching menu items:", err);
     }
