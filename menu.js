@@ -40,6 +40,10 @@ if (!localStorage.getItem("token")) {
   // Delete menu item
   const deleteMenu = async (id) => {
     try {
+        if (!localStorage.getItem("token")) {
+            window.location.href = "index.html";
+            return
+          }
       await fetch(`${API_URL}/${id}`, { method: "DELETE" });
       loadMenu();
     } catch (err) {

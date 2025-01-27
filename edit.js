@@ -39,7 +39,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Handle form submission to update the item
     document.getElementById("edit-menu-form").addEventListener("submit", async (e) => {
       e.preventDefault();
-  
+      if (!token) {
+        // If no token is found, redirect to the login page
+        window.location.href = "login.html";
+        return;
+      }
       const updatedItem = {
         title: titleInput.value,
         description: descriptionInput.value,

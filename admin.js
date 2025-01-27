@@ -10,6 +10,10 @@ if (!localStorage.getItem("token")) {
   // Add new menu item
   addMenuForm.addEventListener("submit", async (e) => {
     e.preventDefault();
+    if (!localStorage.getItem("token")) {
+        window.location.href = "index.html";
+        return
+      }
   
     const newMenuItem = {
       title: document.getElementById("title").value,
