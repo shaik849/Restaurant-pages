@@ -28,7 +28,7 @@ if (!localStorage.getItem("token")) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newMenuItem),
     });
-  
+    alert("Item added successfully")
     addMenuForm.reset();
   });
   
