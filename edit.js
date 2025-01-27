@@ -1,5 +1,9 @@
+
+
 document.addEventListener("DOMContentLoaded", async () => {
     // Check if the token exists
+    const API_URL = "https://restaurant-server-tm65.onrender.com/menu"
+
     const token = localStorage.getItem("token");
     if (!token) {
       // If no token is found, redirect to the login page
@@ -18,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   
     // Fetch the item's current details
     try {
-      const response = await fetch(`http://localhost:3001/menu/${itemId}`);
+      const response = await fetch(`${API_URL}/${itemId}`);
       if (!response.ok) throw new Error("Failed to fetch item details.");
       const item = await response.json();
   
@@ -45,7 +49,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       };
   
       try {
-        const response = await fetch(`http://localhost:3001/menu/${itemId}`, {
+        const response = await fetch(`${API_URL}/${itemId}`, {
           method: "PATCH",
           headers: { 
             "Content-Type": "application/json",

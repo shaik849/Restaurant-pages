@@ -1,4 +1,6 @@
 // Redirect to login page if token does not exist
+const API_URL = "https://restaurant-server-tm65.onrender.com/menu"
+
 if (!localStorage.getItem("token")) {
     window.location.href = "index.html";
   }
@@ -8,7 +10,7 @@ if (!localStorage.getItem("token")) {
   // Fetch and display menu items
   const loadMenu = async () => {
     try {
-      const response = await fetch("http://localhost:3001/menu");
+      const response = await fetch(API_URL);
       const menu = await response.json();
   
       menuTableBody.innerHTML = "";
@@ -38,7 +40,7 @@ if (!localStorage.getItem("token")) {
   // Delete menu item
   const deleteMenu = async (id) => {
     try {
-      await fetch(`http://localhost:3001/menu/${id}`, { method: "DELETE" });
+      await fetch(`${API_URL}/${id}`, { method: "DELETE" });
       loadMenu();
     } catch (err) {
       console.error("Error deleting menu item:", err);
