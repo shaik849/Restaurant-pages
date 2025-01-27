@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const token = localStorage.getItem("token");
     if (!token) {
       // If no token is found, redirect to the login page
-      window.location.href = "login.html";
+      window.location.href = "index.html";
       return;
     }
   
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       e.preventDefault();
       if (!token) {
         // If no token is found, redirect to the login page
-        window.location.href = "login.html";
+        window.location.href = "index.html";
         return;
       }
       const updatedItem = {
