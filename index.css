@@ -120,19 +120,107 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-}
-
-th, td {
+  }
+  
+  th, td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: left;
-}
-
-th {
+  }
+  
+  th {
     background-color: #f4f4f4;
     font-weight: bold;
-}
+  }
+  
+  .menu-controls {
+    margin-bottom: 20px;
+  }
 
+  .filters{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  select {
+    appearance: none; /* Removes default arrow in most browsers */
+    -webkit-appearance: none; /* Removes default arrow in Safari */
+    -moz-appearance: none; /* Removes default arrow in Firefox */
+    
+    background-color: #f9f9f9; /* Light background */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px 40px 10px 10px; /* Adjust padding for better spacing */
+    font-size: 16px; /* Adjust font size */
+    color: #333; /* Text color */
+    cursor: pointer; /* Change cursor to pointer */
+    width: 200px; /* Set a fixed width */
+    outline: none; /* Remove outline */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  select:hover {
+    background-color: #e6e6e6; /* Slightly darker background on hover */
+  }
+  
+  select:focus {
+    border-color: #007bff; /* Blue border on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add subtle glow */
+  }
+  
+  select::-ms-expand {
+    display: none; /* Remove the arrow in IE */
+  }
+  
+  .select-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .select-wrapper select {
+    padding-right: 30px; /* Adjust padding to make room for the native arrow */
+  }
+  
+  .sorting,
+  .filtering {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+  }
+  
+  .menu-container input[type="number"] {
+    width: 100px;
+    padding: 5px;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  
+  .pagination button {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-color: #007bff; /* Blue border */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add subtle glow */
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .pagination button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  
+  .pagination span {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
 /* Lists */
 ul {
     list-style: none;
@@ -185,3 +273,6 @@ div {
 .p-20 {
     padding: 20px;
 }
+
+
+  
