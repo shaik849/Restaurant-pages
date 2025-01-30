@@ -180,6 +180,14 @@ table {
   .select-wrapper select {
     padding-right: 30px; /* Adjust padding to make room for the native arrow */
   }
+
+  .search-bar{
+    display: flex;
+    padding: 10px 0px 5px 0px;
+  }
+  .search-bar #search-menu{
+    margin-left: 5px;
+  }
   
   .sorting,
   .filtering {

@@ -22,6 +22,10 @@
           <option value="ratings-asc">Ratings (Low to High)</option>
           <option value="ratings-desc">Ratings (High to Low)</option>
         </select>
+        <div class="search-bar">
+          <label for="search-menu">Search:</label>
+          <input type="text" id="search-menu" placeholder="Search by title..." />
+        </div>
       </div>
     
       <div class="filtering">
@@ -35,6 +39,7 @@
           <input type="number" id="min-rate" placeholder="Min Rate" />
           <input type="number" id="max-rate" placeholder="Max Rate" />
         </div>
+        
         <button id="apply-filters" onclick="applyFilters()">Apply Filters</button>
       </div>
       </div>

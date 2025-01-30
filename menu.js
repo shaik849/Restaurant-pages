@@ -6,6 +6,8 @@ if (!localStorage.getItem("token")) {
 
 const menuTableBody = document.getElementById("menu-table-body");
 const paginationContainer = document.getElementById("pagination");
+const searchInput = document.getElementById("search-menu");
+let searchQuery = ""; 
 let menuItems = []; // Store all fetched menu items
 let filteredMenu = []; // Store filtered or sorted menu items
 let currentPage = 1; // Current page
@@ -37,6 +39,29 @@ const renderMenu = (menu) => {
     `;
     menuTableBody.appendChild(row);
   });
+};
+
+
+// Debounce function to limit search calls
+const debounce = (func, delay) => {
+  let timeoutId;
+  return (...args) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func(...args), delay);
+  };
+};
+
+// Apply search and pagination
+const applySearch = () => {
+  searchQuery = searchInput.value.toLowerCase().trim();
+  
+  // Filter items based on the search query
+  filteredMenu = menuItems.filter(item =>
+    item.title.toLowerCase().includes(searchQuery)
+  );
+
+  currentPage = 1; // Reset to the first page
+  paginateMenu();
 };
 
 // Render pagination controls
@@ -151,6 +176,7 @@ const editMenu = (id) => {
 // Event Listeners
 document.getElementById("sort-by").addEventListener("change", applySorting);
 document.getElementById("apply-filters").addEventListener("click", applyFilters);
+searchInput.addEventListener("input", debounce(applySearch, 300));
 // document.getElementById("apply-rate-filters").addEventListener("click", applyRateFiltering);
 
 // Load menu on page load
